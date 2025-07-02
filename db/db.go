@@ -24,8 +24,8 @@ func createTable() {
 	CREATE TABLE IF NOT EXISTS events(
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	title TEXT NOT NULL,
+	location TEXT NOT NULL,
 	description TEXT NOT NULL,
-	date_time DATETIME NOT NULL,
 	user_id INTEGER NOT NULL,
 	created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 	)`
