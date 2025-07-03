@@ -15,7 +15,8 @@ func main() {
 	server.POST("/events",handlers.CreateEvent)
 	server.PUT("/events/:id",handlers.UpdateEvent)
 	server.DELETE("/events/:id",handlers.DeleteEvent)
+	
+	server.POST("/signup",handlers.CreateUser)
+	server.POST("/login",handlers.LoginUser)
 	server.Run(":8080")
-
-}	
-
+}
