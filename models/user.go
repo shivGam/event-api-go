@@ -38,10 +38,10 @@ func (u *User) Save() error{
 }
 
 func (u *User) ValidateCredentials() error{
-	selectQuery:=`SELECT password FROM users WHERE email=?`
+	selectQuery:=`SELECT id,password FROM users WHERE email=?`
 	row:=db.DB.QueryRow(selectQuery,u.Email)
 	var hashedPass string
-	err:=row.Scan(&hashedPass)//ajeeb hai ye
+	err:=row.Scan(&u.ID,&hashedPass)//ajeeb hai ye
 	if err!=nil{
 		return err
 	}
